@@ -1,0 +1,26 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-card>
+        <form [formGroup]="createaccountForm" novalidate>
+        <div class="depositform">  
+          <ion-label>Account: </ion-label> 
+          <ion-select placeholder="Account" formControlName="accounttype" #accounttype>
+            <ion-select-option>Checking</ion-select-option>
+            <ion-select-option>Savings</ion-select-option>
+        </ion-select>
+        <ion-label>Initial Balance </ion-label> 
+        <ion-item>$ <ion-input type="number" formControlName="balance" #balance></ion-input></ion-item>
+      </div>
+        <ion-button color="tertiary" expand="block" size="large" [disabled]="createaccountForm.invalid" routerLink="/" (click)="addAccount()">Create Account</ion-button>
+        <ion-button color="medium" expand="block" routerLink="/">back</ion-button>
+    
+      </form>
+      </ion-card>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

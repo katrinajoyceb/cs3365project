@@ -1,0 +1,37 @@
+<ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+          <ion-card>
+
+          <form [formGroup]="transferForm" novalidate>
+          <div class="transferForm">  
+            <ion-label>From: </ion-label> 
+            <ion-select formControlName="srcAccount" (ionChange)="makeChange()" placeholder="Choose Source Account">
+              <ion-select-option *ngFor="let srcAccount of srcAccounts">{{srcAccount.accounttype}}</ion-select-option>
+            </ion-select>
+
+            <ion-label>To: </ion-label> 
+            <ion-select formControlName="destAccount" placeholder="Choose Destination Account">
+              <ion-select-option *ngFor="let destAccount of destAccounts">{{destAccount.accounttype}}</ion-select-option>
+            </ion-select>
+            <ion-label>Source Balance </ion-label> 
+            <ion-item>$ {{srcBalance}}</ion-item>
+            <ion-label>Destination Balance </ion-label> 
+            <ion-item>$ {{destBalance}}</ion-item>
+            <ion-label>Transfer Amount: </ion-label> 
+            <ion-item>$ <ion-input type="number" formControlName="transferAmount" #transferAmount></ion-input></ion-item>
+            
+        </div>
+          
+          <ion-button color="tertiary" expand="block" size="large" (click)="transfer()">transfer</ion-button>
+          <ion-button color="medium" expand="block" routerLink="/home">back</ion-button>
+        </form>
+        
+        </ion-card>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

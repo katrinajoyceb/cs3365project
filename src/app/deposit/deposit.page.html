@@ -1,0 +1,26 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <form [formGroup]="depositForm" novalidate>
+          <div class="depositform">  
+            <ion-label>Account:</ion-label> 
+            <ion-input type="text" formControlName="accounttype" #depositamount [(ngModel)] = "account.accounttype" readonly></ion-input>
+            <ion-label>Balance </ion-label> 
+            <ion-item>$ {{account.balance}}</ion-item>
+            <ion-label>Deposit Amount: </ion-label> 
+            <ion-item>$ <ion-input type="number" formControlName="depositamount" #depositamount></ion-input></ion-item>
+          </div>
+          <ion-button color="tertiary" expand="block" size="large" (click)="deposit()">deposit</ion-button>
+          <ion-button color="medium" expand="block" routerLink="/landing">back</ion-button>
+        </form>
+        
+        </ion-card>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

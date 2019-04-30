@@ -1,0 +1,28 @@
+<ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+          <ion-card>
+
+          <form [formGroup]="withdrawForm" novalidate>
+          <div class="withdrawForm">  
+            <ion-label>Account:</ion-label> 
+            <ion-input type="text" formControlName="accounttype" [(ngModel)] = "account.accounttype" readonly></ion-input>
+            <ion-label>Balance </ion-label> 
+            <ion-item>$ {{account.balance}}</ion-item>
+            <ion-label>Withdraw Amount: </ion-label> 
+            <ion-item>$ <ion-input type="number" formControlName="withdrawamount"></ion-input></ion-item>
+            
+        </div>
+          
+          <ion-button color="tertiary" expand="block" size="large" (click)="withdraw()">withdraw</ion-button>
+          <ion-button color="medium" expand="block" routerLink="/landing2">back</ion-button>
+        </form>
+        
+        </ion-card>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
